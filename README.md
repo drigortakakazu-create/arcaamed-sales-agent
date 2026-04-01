@@ -55,9 +55,13 @@ O servidor iniciará em `http://localhost:8000`
 | Variável | Descrição | Obrigatória |
 |----------|-----------|-------------|
 | `OPENAI_API_KEY` | Chave de API da OpenAI | ✅ Sim |
+| `OPENAI_MODEL` | Modelo OpenAI (padrão: gpt-4.1-mini) | ❌ Não |
 | `ZAPI_INSTANCE_ID` | ID da instância Z-API | ✅ Sim |
 | `ZAPI_TOKEN` | Token da instância Z-API | ✅ Sim |
 | `ZAPI_CLIENT_TOKEN` | Token de segurança da conta Z-API | ✅ Sim |
+| `AGENT_NAME` | Nome da agente (padrão: Clara) | ❌ Não |
+| `AGENT_ROLE` | Papel da agente no prompt | ❌ Não |
+| `LINK_PAGAMENTO` | Link oficial de fechamento | ❌ Não |
 | `PORT` | Porta do servidor (padrão: 8000) | ❌ Não |
 
 ## Endpoints
@@ -129,6 +133,7 @@ curl -X POST "https://seu-dominio.onrender.com/webhook" \
 
 ```
 arcaamed-sales-agent/
+├── agent_config.py         # Persona, conhecimento e políticas do agente
 ├── main.py                 # Servidor FastAPI principal
 ├── requirements.txt        # Dependências Python
 ├── Procfile               # Configuração para Render
