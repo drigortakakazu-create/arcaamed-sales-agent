@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: arcaamed-sales-agent
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        scope: build,runtime
+      - key: ZAPI_INSTANCE_ID
+        scope: build,runtime
+      - key: ZAPI_TOKEN
+        scope: build,runtime
+      - key: ZAPI_CLIENT_TOKEN
+        scope: build,runtime
+      - key: PORT
+        value: 8000
