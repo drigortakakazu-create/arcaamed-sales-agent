@@ -130,7 +130,6 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("/home/ubuntu/arcaamed-agent/agent.log"),
         logging.StreamHandler(),
     ],
 )
